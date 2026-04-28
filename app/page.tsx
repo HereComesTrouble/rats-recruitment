@@ -4,20 +4,20 @@ const services = [
     body: "We identify raiders burdened by surplus hardware and return those items to the ecosystem with professional urgency."
   },
   {
-    title: "Field Audits",
-    body: "Our patrols conduct on-site inspections for overconfidence, loose footing, and unattended backpacks."
+    title: "Total Coverage",
+    body: "RATS are often kind souls and spend much of their time in 'PvE lobbies', ensuring that even players who rarely engage in PvP receive the economic benefits of RATS."
   },
   {
-    title: "Temporary Storage Recovery",
-    body: "Dropped equipment is cataloged, admired, and redistributed to operators with immediate carrying capacity."
+    title: "Cordial Professionalism",
+    body: "RATS operatives are encouraged to facilitate quick and humane engagements with good sportsmanship."
   }
 ];
 
 const principles = [
-  "Respect the extraction. A clean getaway is the purest receipt.",
-  "Preserve scarcity. Embark built a harsh economy, and we are its unpaid interns.",
-  "Punch up, flank wide, leave the stash lighter than you found it.",
-  "Keep comms funny, fights fair, and grudges temporary."
+  "Auditors: Checking that raider stashes are kept manageable.",
+  "Surgeons: Policing wonton use of gold weaponry.",
+  "Guardians: Maintaining security at exfiltration sites.",
+  "Distributors: Seizing assets to supply to new or poorly-geared raiders."
 ];
 
 const roles = [
@@ -30,18 +30,18 @@ const roles = [
 const testimonials = [
   {
     quote:
-      "I entered with three guns, left with perspective, and discovered my stash had never looked cleaner.",
+      "The game is dying because of you ****ing ***holes",
     name: "Anonymous Raider"
   },
   {
     quote:
-      "R.A.T.S. solved our storage problem before we knew we had one.",
+      "Wow, go **** yourself bro",
     name: "Satisfied Former Backpack Owner"
   },
   {
     quote:
-      "Their commitment to Embark's vision is legally distinct from theft.",
-    name: "Independent Compliance Rodent"
+      "Why? I was friendly!",
+    name: "xXSLVYERXx"
   }
 ];
 
@@ -54,10 +54,11 @@ export default function Home() {
             <p className="eyebrow">ARC Raiders community outfit</p>
             <h1>Raiders&apos; Authority on Temporary Storage</h1>
             <p className="lede">
-              R.A.T.S. is a tongue-in-cheek but operationally real collective
-              of ARC Raiders players providing inventory management services
-              across the Rust Belt. We free stash space one decisive knock at a
-              time.
+              Is your stash full all the time? Are you tired of shooting the
+              same dozen ARC over and over in the safety of PvE lobbies? Are
+              you concerned about the welfare of ARC Raiders&apos; playerbase?
+              RATS is out to solve all of these problems and more, one
+              engagement at a time.
             </p>
             <div className="hero__actions" aria-label="Recruitment actions">
               <a className="button button--primary" href="#enlist">
@@ -85,7 +86,7 @@ export default function Home() {
               </div>
               <div>
                 <dt>Compliance Model</dt>
-                <dd>Embark-aligned scarcity</dd>
+                <dd>Population-optimized engagements</dd>
               </div>
             </dl>
           </aside>
@@ -94,13 +95,14 @@ export default function Home() {
 
       <section className="section manifesto" aria-labelledby="manifesto-title">
         <p className="eyebrow">Officially unofficial</p>
-        <h2 id="manifesto-title">Your hoard is our jurisdiction.</h2>
+        <h2 id="manifesto-title">YOUR STASH IS OUR BUSINESS.</h2>
         <p>
-          Every raider knows the pain: a stash packed with almost-useful
-          attachments, guns you swear you will run later, and enough ammo to
-          make an accountant nervous. R.A.T.S. exists to maintain the sacred
-          pressure of ARC Raiders by encouraging circulation, consequence, and
-          the occasional involuntary donation.
+          Embark Studios has graciously provided raiders with not only enormous
+          stash sizes, but also abundant sources of loot - it often falls right
+          out of the sky! As an unintended side effect, this serves as a source
+          of cortisol when raiders are swimming in so much goop that difficult
+          decisions must be made about what to keep and what to salvage. RATS
+          are out to protect you from such deliberations.
         </p>
       </section>
 
@@ -122,7 +124,7 @@ export default function Home() {
       <section className="section split" aria-labelledby="doctrine-title">
         <div>
           <p className="eyebrow">Operating doctrine</p>
-          <h2 id="doctrine-title">Serious enough to show up. Dumb enough to matter.</h2>
+          <h2 id="doctrine-title">WORK WITH R.A.T.S. ON YOUR OWN TERMS.</h2>
         </div>
         <ul className="principles">
           {principles.map((principle) => (
@@ -170,7 +172,7 @@ export default function Home() {
 
       <footer className="footer">
         <p>R.A.T.S. is an ARC Raiders player organization and is not affiliated with Embark Studios.</p>
-        <p>Raiders&apos; Authority on Temporary Storage: your stash, temporarily our problem.</p>
+        <p>Raiders&apos; Authority on Temporary Storage: Your stash is our business.</p>
       </footer>
     </main>
   );
