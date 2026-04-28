@@ -1,0 +1,11 @@
+.next
+node_modules
+out
+dist
+build
+.vercel
+tsconfig.tsbuildinfo
+
+*.log
+.env*
+!.env.example
