@@ -621,6 +621,29 @@ dd {
   color: var(--accent);
 }
 
+.account-shell__discord {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-left: -2px;
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--muted);
+  line-height: 0;
+  font-size: 0;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.account-shell__discord:hover,
+.account-shell__discord:focus-visible {
+  color: var(--accent);
+  outline: none;
+  transform: translateY(-1px);
+}
+
 /* ----- Profile button ----- */
 
 .profile-button {
