@@ -596,6 +596,85 @@ dd {
   color: var(--accent);
 }
 
+/* ----- Account menu (gear dropdown) ----- */
+
+.account-menu {
+  position: relative;
+}
+
+.account-menu__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.account-menu__trigger:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(30deg);
+}
+
+.account-menu__trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.account-menu__trigger[aria-expanded="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.account-menu__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: grid;
+  min-width: 200px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel-strong);
+  padding: 6px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  z-index: 20;
+}
+
+.account-menu__item {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  padding: 10px 12px;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.account-menu__item:hover,
+.account-menu__item:focus-visible {
+  background: rgba(202, 255, 112, 0.12);
+  color: var(--accent);
+  outline: none;
+}
+
+.account-menu__item--danger:hover,
+.account-menu__item--danger:focus-visible {
+  background: rgba(255, 107, 74, 0.15);
+  color: var(--danger);
+}
+
 .account-shell__main {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;

@@ -1,12 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { auth, signOut } from "@/auth";
-
-async function handleSignOut() {
-  "use server";
-  await signOut({ redirectTo: "/" });
-}
+import { auth } from "@/auth";
+import AccountMenu from "./AccountMenu";
 
 export default async function AccountLayout({ children }: { children: ReactNode }) {
   const session = await auth();
@@ -22,14 +18,8 @@ export default async function AccountLayout({ children }: { children: ReactNode 
         </Link>
         <nav className="account-shell__nav" aria-label="Account">
           <Link href="/account">Overview</Link>
-          <Link href="/account/security">Security</Link>
-          <Link href="/account/connections">Connections</Link>
         </nav>
-        <form action={handleSignOut}>
-          <button className="button button--ghost button--sm" type="submit">
-            Log out
-          </button>
-        </form>
+        <AccountMenu />
       </header>
       <main className="account-shell__main">{children}</main>
     </div>
