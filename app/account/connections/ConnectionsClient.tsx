@@ -21,6 +21,7 @@ const META: Record<
     label: string;
     description: string;
     connect: string | null;
+    comingSoon?: boolean;
   }
 > = {
   steam: {
@@ -30,14 +31,15 @@ const META: Record<
   },
   epic: {
     label: "Epic Games",
-    description: "Sign in via Epic Games OAuth. Links your Epic display name.",
-    connect: "/api/connections/epic/start"
+    description: "Epic Games linking is coming soon.",
+    connect: null,
+    comingSoon: true
   },
   xbox: {
     label: "Xbox",
-    description:
-      "Sign in via Microsoft to verify your Xbox gamertag through Xbox Live.",
-    connect: "/api/connections/xbox/start"
+    description: "Xbox linking is coming soon.",
+    connect: null,
+    comingSoon: true
   },
   playstation: {
     label: "PlayStation",
@@ -122,6 +124,8 @@ export default function ConnectionsClient({
                   >
                     {conn.verified ? "Verified" : "Unverified"}
                   </span>
+                ) : meta.comingSoon ? (
+                  <span className="badge badge--muted">Coming soon</span>
                 ) : (
                   <span className="badge badge--muted">Not connected</span>
                 )}
@@ -176,6 +180,15 @@ export default function ConnectionsClient({
                   disabled={busy === provider}
                 >
                   {busy === provider ? "Working..." : "Disconnect"}
+                </button>
+              ) : meta.comingSoon ? (
+                <button
+                  className="button button--primary"
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                >
+                  Coming soon
                 </button>
               ) : (
                 <a className="button button--primary" href={meta.connect ?? "#"}>
