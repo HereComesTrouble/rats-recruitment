@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { auth } from "@/auth";
+
 const services = [
   {
     title: "Stash Space Liberation",
@@ -45,9 +48,30 @@ const testimonials = [
   }
 ];
 
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+  const isLoggedIn = Boolean(session?.user);
   return (
     <main>
+      <header className="site-header">
+        <nav className="site-header__nav" aria-label="Account">
+          {isLoggedIn ? (
+            <Link className="button button--ghost button--sm" href="/account">
+              Account
+            </Link>
+          ) : (
+            <>
+              <Link className="button button--ghost button--sm" href="/login">
+                Log in
+              </Link>
+              <Link className="button button--primary button--sm" href="/register">
+                Register
+              </Link>
+            </>
+          )}
+        </nav>
+      </header>
+
       <section className="hero section">
         <div className="hero__grid">
           <div className="hero__copy">
