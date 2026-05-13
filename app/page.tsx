@@ -23,13 +23,6 @@ const principles = [
   "Distributors: Seizing assets to supply to new or poorly-geared raiders."
 ];
 
-const roles = [
-  "Auditors who can spot a heavy backpack at two zip lines.",
-  "Procurement specialists with calm hands and questionable ethics.",
-  "Extraction denial associates comfortable working outdoors, under fire.",
-  "New recruits willing to learn the difference between looting and logistics."
-];
-
 const testimonials = [
   {
     quote:
@@ -163,19 +156,13 @@ export default async function Home() {
             <p className="eyebrow">Recruitment desk</p>
             <h2 id="enlist-title">Join the authority</h2>
             <p>
-              We are looking for raiders who enjoy coordinated raids, good
-              comms, fair fights, and committing to the bit when the bit has
-              tactical value.
+              Give back to your fellow Speranzan. Be a funmaxxer. Be a part of
+              R.A.T.S.
             </p>
           </div>
-          <div className="roles">
-            {roles.map((role) => (
-              <span key={role}>{role}</span>
-            ))}
-          </div>
-          <a className="button button--primary" href="mailto:rats.recruitment@example.com">
-            Request Temporary Clearance
-          </a>
+          <Link className="button button--primary" href="/register">
+            Register as an Operative
+          </Link>
         </div>
       </section>
 
