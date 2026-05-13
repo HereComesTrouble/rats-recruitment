@@ -596,6 +596,48 @@ dd {
   color: var(--accent);
 }
 
+/* ----- Profile button ----- */
+
+.profile-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
+  transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.profile-button:hover,
+.profile-button:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.profile-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+.profile-button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-button__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ----- Account menu (gear dropdown) ----- */
 
 .account-menu {
@@ -871,6 +913,236 @@ dd {
 
 @media (max-width: 720px) {
   .recovery-codes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- Guides ----- */
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--panel);
+  padding: 24px;
+  color: inherit;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.guide-card:hover,
+.guide-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.guide-card__role {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.guide-card h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.guide-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.guide-card__cta {
+  margin-top: auto;
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-article {
+  display: grid;
+  gap: 28px;
+  max-width: 820px;
+}
+
+.guide-article__back {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guide-article__back:hover {
+  color: var(--accent);
+}
+
+.guide-article__header h1 {
+  margin: 8px 0 0;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.guide-section {
+  display: grid;
+  gap: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.guide-section h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.guide-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.guide-section p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.guide-section em {
+  color: var(--accent-strong);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.guide-section strong {
+  color: var(--accent-strong);
+}
+
+.guide-list-ordered,
+.guide-list-bullets {
+  margin: 4px 0 0;
+  padding-left: 24px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.guide-list-ordered > li,
+.guide-list-bullets > li {
+  margin-bottom: 10px;
+}
+
+.guide-list-ordered > li::marker {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.guide-list-bullets {
+  margin-top: 8px;
+}
+
+.guide-callout {
+  margin: 0;
+  border-left: 3px solid var(--accent);
+  background: rgba(202, 255, 112, 0.1);
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.guide-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.guide-image {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.guide-image__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(202, 255, 112, 0.04),
+      rgba(202, 255, 112, 0.04) 6px,
+      transparent 6px,
+      transparent 12px
+    ),
+    rgba(0, 0, 0, 0.25);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.guide-image figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.guide-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.guide-compare > div {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 18px;
+}
+
+.guide-compare ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.guide-compare li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 720px) {
+  .guide-compare {
     grid-template-columns: 1fr;
   }
 }
