@@ -12,11 +12,20 @@ export type Guide = GuideMeta & {
   body: ReactNode;
 };
 
-function ImagePlaceholder({ caption }: { caption: string }) {
+function GuideImage({
+  src,
+  alt,
+  caption
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) {
   return (
     <figure className="guide-image">
-      <div className="guide-image__box" aria-hidden="true">
-        <span>Reference image</span>
+      <div className="guide-image__frame">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={src} alt={alt} className="guide-image__img" />
       </div>
       <figcaption>{caption}</figcaption>
     </figure>
@@ -98,24 +107,19 @@ const etiquette: Guide = {
           distinction, here are some differences between the two:
         </p>
 
-        <div className="guide-compare">
-          <div>
-            <h3>RATS operative</h3>
-            <ul>
-              <li>Always begins an engagement by announcing his intent.</li>
-              <li>Polite and professional, even when downed.</li>
-              <li>On a mission to better ARC Raiders for everyone.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Rat</h3>
-            <ul>
-              <li>Fires from a shadow, peek or bush before he is detected.</li>
-              <li>Hurls insults and profanity, win or lose.</li>
-              <li>An unskilled player seeking easy prey by any means.</li>
-            </ul>
-          </div>
-        </div>
+        <h3>RATS operative</h3>
+        <ul className="guide-list-bullets">
+          <li>Always begins an engagement by announcing his intent.</li>
+          <li>Polite and professional, even when downed.</li>
+          <li>On a mission to better ARC Raiders for everyone.</li>
+        </ul>
+
+        <h3>Rat</h3>
+        <ul className="guide-list-bullets">
+          <li>Fires from a shadow, peek or bush before he is detected.</li>
+          <li>Hurls insults and profanity, win or lose.</li>
+          <li>An unskilled player seeking easy prey by any means.</li>
+        </ul>
 
         <p>
           Rats as exemplified in the latter half of each scenario are
@@ -154,9 +158,21 @@ const auditor: Guide = {
           &ldquo;Switching the Supply&rdquo;.
         </Callout>
         <div className="guide-image-grid">
-          <ImagePlaceholder caption="Radio Renegade outfit - configuration 1" />
-          <ImagePlaceholder caption="Radio Renegade outfit - configuration 2" />
-          <ImagePlaceholder caption="Radio Renegade outfit - configuration 3" />
+          <GuideImage
+            src="/guides/auditor/1.png"
+            alt="Radio Renegade outfit preview card"
+            caption="Outfit card"
+          />
+          <GuideImage
+            src="/guides/auditor/2.png"
+            alt="Radio Renegade customization options"
+            caption="Customization options"
+          />
+          <GuideImage
+            src="/guides/auditor/3.png"
+            alt="Auditor in full Radio Renegade kit"
+            caption="Field appearance"
+          />
         </div>
         <p>
           This is an Auditor ready to ensure the health of the ARC Raiders
@@ -220,9 +236,21 @@ const surgeon: Guide = {
         </p>
         <Callout>Acquire the Surgeon outfit from Raider Deck 003.</Callout>
         <div className="guide-image-grid">
-          <ImagePlaceholder caption="Surgeon outfit - configuration 1" />
-          <ImagePlaceholder caption="Surgeon outfit - configuration 2" />
-          <ImagePlaceholder caption="Surgeon outfit - configuration 3" />
+          <GuideImage
+            src="/guides/surgeon/1.png"
+            alt="Surgeon outfit preview card"
+            caption="Outfit card"
+          />
+          <GuideImage
+            src="/guides/surgeon/2.png"
+            alt="Surgeon customization options"
+            caption="Customization options"
+          />
+          <GuideImage
+            src="/guides/surgeon/3.png"
+            alt="Surgeon in full kit"
+            caption="Field appearance"
+          />
         </div>
         <p>This is the garb of a medical professional, ready to prevent harm!</p>
       </section>
@@ -281,9 +309,21 @@ const guardian: Guide = {
         </p>
         <Callout>Acquire the Sforza outfit by reaching raider level 10.</Callout>
         <div className="guide-image-grid">
-          <ImagePlaceholder caption="Sforza outfit - configuration 1" />
-          <ImagePlaceholder caption="Sforza outfit - configuration 2" />
-          <ImagePlaceholder caption="Sforza outfit - configuration 3" />
+          <GuideImage
+            src="/guides/guardian/1.png"
+            alt="Sforza outfit preview card"
+            caption="Outfit card"
+          />
+          <GuideImage
+            src="/guides/guardian/2.png"
+            alt="Sforza customization options"
+            caption="Customization options"
+          />
+          <GuideImage
+            src="/guides/guardian/3.png"
+            alt="Guardian in full Sforza kit"
+            caption="Field appearance"
+          />
         </div>
         <p>
           You are encouraged to enable the Cape if you have it unlocked.
@@ -383,9 +423,21 @@ const distributor: Guide = {
           Corruption&rdquo;.
         </Callout>
         <div className="guide-image-grid">
-          <ImagePlaceholder caption="Warden outfit - configuration 1" />
-          <ImagePlaceholder caption="Warden outfit - configuration 2" />
-          <ImagePlaceholder caption="Warden outfit - configuration 3" />
+          <GuideImage
+            src="/guides/distributor/1.png"
+            alt="Warden outfit preview card"
+            caption="Outfit card"
+          />
+          <GuideImage
+            src="/guides/distributor/2.png"
+            alt="Warden customization options"
+            caption="Customization options"
+          />
+          <GuideImage
+            src="/guides/distributor/3.png"
+            alt="Distributor in full Warden kit"
+            caption="Field appearance"
+          />
         </div>
         <p>This ensemble is bright and unthreatening - like a loot angel!</p>
       </section>

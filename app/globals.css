@@ -1048,14 +1048,24 @@ dd {
 .guide-list-ordered,
 .guide-list-bullets {
   margin: 4px 0 0;
-  padding-left: 24px;
+  padding-left: 28px;
   color: var(--text);
   line-height: 1.7;
+}
+
+.guide-list-ordered {
+  list-style: decimal outside;
+}
+
+.guide-list-bullets {
+  margin-top: 8px;
+  list-style: disc outside;
 }
 
 .guide-list-ordered > li,
 .guide-list-bullets > li {
   margin-bottom: 10px;
+  padding-left: 4px;
 }
 
 .guide-list-ordered > li::marker {
@@ -1063,8 +1073,12 @@ dd {
   font-weight: 800;
 }
 
-.guide-list-bullets {
-  margin-top: 8px;
+.guide-list-bullets > li::marker {
+  color: var(--accent);
+}
+
+.guide-list-bullets .guide-list-bullets {
+  margin-top: 6px;
 }
 
 .guide-callout {
@@ -1078,8 +1092,8 @@ dd {
 
 .guide-image-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .guide-image {
@@ -1088,27 +1102,23 @@ dd {
   gap: 8px;
 }
 
-.guide-image__box {
+.guide-image__frame {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 3 / 4;
-  border: 1px dashed var(--line);
+  height: 320px;
+  border: 1px solid var(--line);
   border-radius: 14px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(202, 255, 112, 0.04),
-      rgba(202, 255, 112, 0.04) 6px,
-      transparent 6px,
-      transparent 12px
-    ),
-    rgba(0, 0, 0, 0.25);
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.guide-image__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .guide-image figcaption {
@@ -1117,32 +1127,12 @@ dd {
   text-align: center;
 }
 
-.guide-compare {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.guide-compare > div {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--panel);
-  padding: 18px;
-}
-
-.guide-compare ul {
-  margin: 10px 0 0;
-  padding-left: 20px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.guide-compare li {
-  margin-bottom: 6px;
-}
-
 @media (max-width: 720px) {
-  .guide-compare {
+  .guide-image-grid {
     grid-template-columns: 1fr;
+  }
+
+  .guide-image__frame {
+    height: 360px;
   }
 }
