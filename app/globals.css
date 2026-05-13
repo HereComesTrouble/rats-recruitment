@@ -855,6 +855,50 @@ dd {
   letter-spacing: 0.08em;
 }
 
+.account-danger-zone {
+  display: grid;
+  gap: 16px;
+  margin-top: 36px;
+  border: 1px solid rgba(255, 107, 74, 0.35);
+  border-radius: 20px;
+  background: rgba(255, 107, 74, 0.06);
+  padding: 28px;
+  backdrop-filter: blur(14px);
+}
+
+.account-danger-zone h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--danger);
+}
+
+.account-danger-zone > p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.account-danger-zone__warn {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.account-danger-zone__confirm {
+  display: grid;
+  gap: 14px;
+}
+
+.account-danger-zone__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
 /* ----- Connections ----- */
 
 .connection-grid {

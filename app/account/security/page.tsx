@@ -1,6 +1,7 @@
 import { eq } from "drizzle-orm";
 import { auth } from "@/auth";
 import { db, schema } from "@/db";
+import DeleteAccountSection from "./DeleteAccountSection";
 import SecurityClient from "./SecurityClient";
 
 export default async function SecurityPage() {
@@ -29,6 +30,8 @@ export default async function SecurityPage() {
         email={user?.email ?? ""}
         mfaEnabled={Boolean(user?.totpEnabledAt)}
       />
+
+      <DeleteAccountSection mfaEnabled={Boolean(user?.totpEnabledAt)} />
     </section>
   );
 }
