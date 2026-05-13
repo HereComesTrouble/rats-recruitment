@@ -78,9 +78,9 @@ export default async function Home() {
               engagement at a time.
             </p>
             <div className="hero__actions" aria-label="Recruitment actions">
-              <a className="button button--primary" href="#enlist">
+              <Link className="button button--primary" href="/register">
                 Enlist with R.A.T.S.
-              </a>
+              </Link>
               <a className="button button--secondary" href="#services">
                 Review Services
               </a>
