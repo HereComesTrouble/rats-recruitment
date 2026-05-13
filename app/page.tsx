@@ -66,47 +66,24 @@ export default async function Home() {
       </header>
 
       <section className="hero section">
-        <div className="hero__grid">
-          <div className="hero__copy">
-            <p className="eyebrow">ARC Raiders community outfit</p>
-            <h1>Raiders&apos; Authority on Temporary Storage</h1>
-            <p className="lede">
-              Is your stash full all the time? Are you tired of shooting the
-              same dozen ARC over and over in the safety of PvE lobbies? Are
-              you concerned about the welfare of ARC Raiders&apos; playerbase?
-              RATS is out to solve all of these problems and more, one
-              engagement at a time.
-            </p>
-            <div className="hero__actions" aria-label="Recruitment actions">
-              <Link className="button button--primary" href="/register">
-                Enlist with R.A.T.S.
-              </Link>
-              <a className="button button--secondary" href="#services">
-                Review Services
-              </a>
-            </div>
+        <div className="hero__copy">
+          <p className="eyebrow">ARC Raiders community outfit</p>
+          <h1>Raiders&apos; Authority on Temporary Storage</h1>
+          <p className="lede">
+            Is your stash full all the time? Are you tired of shooting the
+            same dozen ARC over and over in the safety of PvE lobbies? Are
+            you concerned about the welfare of ARC Raiders&apos; playerbase?
+            RATS is out to solve all of these problems and more, one
+            engagement at a time.
+          </p>
+          <div className="hero__actions" aria-label="Recruitment actions">
+            <Link className="button button--primary" href="/register">
+              Enlist with R.A.T.S.
+            </Link>
+            <a className="button button--secondary" href="#services">
+              Review Services
+            </a>
           </div>
-
-          <aside className="status-card" aria-label="R.A.T.S. operating status">
-            <div className="status-card__header">
-              <span>Storage Authority Notice</span>
-              <strong>Active</strong>
-            </div>
-            <dl>
-              <div>
-                <dt>Primary Function</dt>
-                <dd>Inventory relief</dd>
-              </div>
-              <div>
-                <dt>Preferred Method</dt>
-                <dd>Polite ambush</dd>
-              </div>
-              <div>
-                <dt>Compliance Model</dt>
-                <dd>Population-optimized engagements</dd>
-              </div>
-            </dl>
-          </aside>
         </div>
       </section>
 

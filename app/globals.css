@@ -68,13 +68,6 @@ main {
   align-items: center;
 }
 
-.hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
-  gap: 32px;
-  align-items: center;
-}
-
 .hero__copy {
   position: relative;
 }
@@ -190,7 +183,6 @@ h3 {
   color: var(--text);
 }
 
-.status-card,
 .card,
 .recruit-card,
 .testimonial {
@@ -198,28 +190,6 @@ h3 {
   background: var(--panel);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(14px);
-}
-
-.status-card {
-  border-radius: 28px;
-  padding: 24px;
-}
-
-.status-card__header {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 18px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.status-card__header strong {
-  color: var(--danger);
 }
 
 dl {
@@ -363,7 +333,6 @@ dd {
     padding: 64px 0;
   }
 
-  .hero__grid,
   .split,
   .card-grid,
   .testimonial-grid {
