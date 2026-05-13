@@ -1,16 +1,8 @@
-import { redirect } from "next/navigation";
 import { desc } from "drizzle-orm";
-import { auth } from "@/auth";
 import { db, schema } from "@/db";
-import { isAdmin } from "@/lib/admin";
 import AdminQueueClient, { type AdminSubmission } from "./AdminQueueClient";
 
 export default async function AdminPage() {
-  const session = await auth();
-  if (!session?.user?.id || !isAdmin(session.user.email)) {
-    redirect("/account");
-  }
-
   const rows = await db
     .select({
       id: schema.exemplarSubmissions.id,
