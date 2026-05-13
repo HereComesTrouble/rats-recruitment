@@ -101,7 +101,30 @@ export const connectedAccounts = pgTable(
   ]
 );
 
+export const exemplarSubmissions = pgTable("exemplar_submission", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  email: text("email").notNull(),
+  operativeType: text("operative_type").notNull(),
+  youtubeUrl: text("youtube_url").notNull(),
+  youtubeId: text("youtube_id").notNull(),
+  status: text("status").notNull().default("pending"),
+  feedback: text("feedback"),
+  submittedAt: timestamp("submitted_at", { mode: "date" }).notNull().defaultNow(),
+  reviewedAt: timestamp("reviewed_at", { mode: "date" }),
+  reviewedBy: text("reviewed_by").references(() => users.id, {
+    onDelete: "set null"
+  })
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type ConnectedAccount = typeof connectedAccounts.$inferSelect;
 export type ConnectionProvider = "steam" | "epic" | "xbox" | "playstation";
+export type ExemplarSubmission = typeof exemplarSubmissions.$inferSelect;
+export type OperativeType = "auditor" | "surgeon" | "guardian" | "distributor";
+export type ExemplarStatus = "pending" | "approved" | "rejected";

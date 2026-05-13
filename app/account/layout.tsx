@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { and, eq } from "drizzle-orm";
 import { auth } from "@/auth";
 import { db, schema } from "@/db";
+import { isAdmin } from "@/lib/admin";
 import AccountMenu from "./AccountMenu";
 import ProfileButton from "./ProfileButton";
 
@@ -25,6 +26,7 @@ export default async function AccountLayout({ children }: { children: ReactNode 
     .limit(1);
 
   const avatarUrl = steam[0]?.avatarUrl ?? null;
+  const showAdmin = isAdmin(session.user.email);
 
   return (
     <div className="account-shell">
@@ -34,6 +36,8 @@ export default async function AccountLayout({ children }: { children: ReactNode 
         </Link>
         <nav className="account-shell__nav" aria-label="Account">
           <Link href="/account/guides">Guides</Link>
+          <Link href="/account/exemplar">Exemplar</Link>
+          {showAdmin ? <Link href="/account/admin">Admin</Link> : null}
         </nav>
         <ProfileButton avatarUrl={avatarUrl} />
         <AccountMenu />

@@ -491,7 +491,8 @@ dd {
 }
 
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.32);
@@ -501,14 +502,38 @@ dd {
   font-family: inherit;
 }
 
+.form-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
 .form-field input:focus-visible,
-.form-field textarea:focus-visible {
+.form-field textarea:focus-visible,
+.form-field select:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
-.form-field input:disabled {
+.form-field input:disabled,
+.form-field input[readonly] {
   opacity: 0.55;
+}
+
+.form-field input[aria-invalid="true"] {
+  border-color: var(--danger);
 }
 
 .form-field small {
@@ -1134,5 +1159,201 @@ dd {
 
   .guide-image__frame {
     height: 360px;
+  }
+}
+
+/* ----- Exemplar program ----- */
+
+.exemplar-steps {
+  margin-top: 14px;
+}
+
+.exemplar-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 8px;
+}
+
+.exemplar-thanks {
+  max-width: 600px;
+}
+
+.exemplar-submissions {
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.exemplar-submissions h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.exemplar-submissions__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.exemplar-submissions__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.exemplar-submission {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 14px 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.exemplar-submission__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.exemplar-submission__role {
+  font-weight: 700;
+}
+
+.exemplar-submission__date {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.exemplar-submission__link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.exemplar-submission__feedback {
+  margin: 0;
+  border-left: 3px solid var(--accent-strong);
+  background: rgba(244, 211, 94, 0.08);
+  padding: 8px 12px;
+  color: var(--text);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+/* ----- Status pills ----- */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.32);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pill--pending {
+  color: var(--accent-strong);
+  border-color: rgba(244, 211, 94, 0.45);
+  background: rgba(244, 211, 94, 0.12);
+}
+
+.pill--approved {
+  color: var(--accent);
+  border-color: rgba(202, 255, 112, 0.55);
+  background: rgba(202, 255, 112, 0.14);
+}
+
+.pill--rejected {
+  color: var(--danger);
+  border-color: rgba(255, 107, 74, 0.5);
+  background: rgba(255, 107, 74, 0.12);
+}
+
+/* ----- Admin queue ----- */
+
+.admin-queue {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.admin-queue__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.admin-queue__row {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.admin-queue__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-queue__role {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.admin-queue__email {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.admin-queue__date {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.admin-queue__link {
+  color: var(--accent);
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.admin-queue__feedback {
+  margin: 0;
+}
+
+.admin-queue__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .admin-queue__date {
+    margin-left: 0;
+    flex-basis: 100%;
   }
 }

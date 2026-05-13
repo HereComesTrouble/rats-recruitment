@@ -7,6 +7,7 @@ Raiders' Authority on Temporary Storage is a Vercel-ready recruitment site for a
 - TOTP two-factor authentication with recovery codes.
 - Password reset over email.
 - Account settings for connecting Steam, Epic Games, Xbox, and PlayStation profiles.
+- The Exemplar program: operatives submit YouTube gameplay for review and an admin (rylesrakori@protonmail.com) approves/rejects with optional feedback.
 
 ## Stack
 
@@ -75,4 +76,10 @@ Sony does not offer a public OAuth flow, so PSN Online IDs are entered manually 
 
 Import the repo in Vercel and accept the default Next.js settings. Set every variable from `.env.example` in the Vercel project before promoting a deployment.
 
-`npm run db:push` (or `npm run db:migrate` against generated migrations) must be run against the production database before users can register.
+`npm run db:push` (or `npm run db:migrate` against generated migrations) must be run against the production database before users can register. Re-run it after schema changes such as the `exemplar_submission` table.
+
+## Exemplar program
+
+- Operatives visit `/account/exemplar` for the four-step protocol and submit a gameplay video at `/account/exemplar/submit`. Submissions are validated as `youtube.com/watch`, `youtu.be`, `youtube.com/shorts`, `/embed`, or `/live` URLs.
+- The submitter's own submissions appear at the bottom of `/account/exemplar` with status (pending / approved / rejected) and any feedback returned by staff.
+- The admin email is hardcoded in `lib/admin.ts` as `rylesrakori@protonmail.com`. That account sees an extra `Admin` link in the account header and can approve/reject every submission with optional feedback at `/account/admin`.
